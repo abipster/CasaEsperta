@@ -17,7 +17,22 @@
 * [Shinobi](shinobi.md)
 
 TODO #3
+## How does it work
+I'll explain more or less how all of whis works together.
 
+Traefik handles automatically the reverse proxy and SSL certificates side of things. 
+
+The "external" authentication is handled by Google authentication, where the Google accounts you permitted will be able to login with their Google accounts and have access to your services. Some of the services have another authentication layer in front of them, but only valid Google accounts will be able to get there.
+
+There's a main frontpage, exposed at https://example.pt by [Organizr](organizr.md). Its [main page](../images/organizr.png) have my server and Raspberry Pis system dashboard so I can have an overview of the state of those machines. It has some admin services on the side bar, like Dozzle, Filerun and Portainer and [Heidall](../images/heimdall.png) as well, as a page to explose the remainder of my services.
+
+I use InfluxDb and grafana to store sensor data and visualize it.
+
+Guacamole is mostly used to access remotely to my servers without exposing my ports.
+
+If I ever need to browse my data files or share a video with someone, I can do it with Filerun on the go.
+
+Sonarr and Radarr are used to manage what TV Shows and Movies I want and use Jackett's indexers to send download requests to qBittorrent. With Plex Media Server I can then watch what's stored in the server.
 
 ## Guide
 This guide assumes there's a clean Ubuntu Server 20.04 install, but it might also work with other Ubuntu based versions, clean or not. It also assumes that there's a Windows 10 client machine to SSH from and to access samba shares.
