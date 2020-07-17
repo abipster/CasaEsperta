@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dashboard</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <script> var netdataTheme = 'slate';</script>
+  <script type="text/javascript" src="https://pi-data.example.pt/dashboard.js"></script>
+  <script>
+    NETDATA.options.current.concurrent_refreshes = false;
+    NETDATA.options.current.stop_updates_when_focus_is_lost = false;
+    NETDATA.options.current.destroy_on_hide = true;
+    //Reload page every 5 minutes
+    setTimeout(function () { location.reload(); }, 5 * 60 * 1000);
+    //Reload uptime badge every 5 seconds
+    setInterval(function () {
+      var d = new Date();
+      $("#pi1-temp_badge").attr("src", "https://pi-data.example.pt/api/v1/badge.svg?chart=sensors.temp_thermal_zone0_thermal_thermal_zone0&label=Temperature&units=°C&" + d.getTime());
+      $("#pi1-uptime_badge").attr("src", "https://pi-data.example.pt/api/v1/badge.svg?chart=system.uptime&label=Uptime&" + d.getTime());
+    }, 5000);
+  </script>
+  <style>
+    body {
+      background-color: transparent !important;
+    }
+
+    .server_wrapper {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      background-color: rgba(0, 0, 0, .35);
+      border: 1px solid rgba(0, 0, 0, .5);
+      border-radius: 5px;
+      padding: 10px;
+      max-width: 600px;
+    }
+
+    .a {
+      grid-column: 1;
+      grid-row: 1
+    }
+
+    .b {
+      grid-column: 2 / span 2;
+      grid-row: 1
+    }
+
+    .c {
+      grid-column: 4;
+      grid-row: 1
+    }
+
+    .pie {
+      margin: 0 auto;
+      padding: 5px;
+      max-width: 190px;
+      height: calc(auto - 20px)
+    }
+
+    .gauge {
+      margin: 0 auto;
+      max-width: 310px;
+      height: calc(auto - 20px)
+    }
+
+    .lbl-badge {
+      height: 20px;
+      width: 100%
+    }
+
+    .lbl-badge img {
+      margin: 0 auto;
+      display: block
+    }
+  </style>
+</head>
+
+<body>
+  <a href="https://pi-data.example.pt/" target="_blank">
+    <div class="server_wrapper" style="margin-right: 5px;">
+      <div class="a">
+        <div class="pie">
+          <div style="width: 100%;will-change:transform;" data-host="https://pi-data.example.pt/"
+            data-netdata="disk_space._" data-dimensions="used" data-append-options="percentage"
+            data-chart-library="easypiechart" data-title="Disk Space" data-units="%" data-easypiechart-max-value="100"
+            data-width="100%" data-decimal-digits="0">
+          </div>
+        </div>
+        <div class="lbl-badge" style="margin-top: 10px;">
+          <img src="https://pi-data.example.pt/api/v1/badge.svg?chart=disk_space._&label=Free&dimensions=avail"></img>
+        </div>
+      </div>
+      <div class="b">
+        <div class="gauge">
+          <div data-host="https://pi-data.example.pt/" class="netdata-container-gauge" style="width:100%"
+            data-netdata="system.cpu" data-chart-library="gauge" data-title="Pi-1 CPU" data-units=""
+            data-decimal-digits="0" data-gauge-max-value="100" data-width="100%" data-after="-300" data-points="300">
+          </div>
+        </div>
+        <div class="lbl-badge">
+          <img id="pi1-temp_badge"
+            src="https://pi-data.example.pt/api/v1/badge.svg?chart=sensors.temp_thermal_zone0_thermal_thermal_zone0&label=Temperature&units=°C"></img>
+        </div>
+        <div class="lbl-badge" style="margin-top: 5px;">
+          <img id="pi1-uptime_badge"
+            src="https://pi-data.example.pt/api/v1/badge.svg?chart=system.uptime&label=Uptime"></img>
+        </div>
+      </div>
+      <div class="c">
+        <div class="pie">
+          <div style="width: 100%;will-change:transform;" data-host="https://pi-data.example.pt/"
+            data-netdata="system.ram" data-dimensions="used|buffers|active|wired" data-append-options="percentage"
+            data-chart-library="easypiechart" data-title="RAM" data-decimal-digits="0" data-units="%"
+            data-easypiechart-max-value="100" data-width="100%">
+          </div>
+        </div>
+        <div class="lbl-badge" style="margin-top: 10px;">
+          <img
+            src="https://pi-data.example.pt/api/v1/badge.svg?chart=system.ram&label=Free&dimensions=free%7Ccached"></img>
+        </div>
+      </div>
+    </div>
+  </a>
+</body>
+
+</html>

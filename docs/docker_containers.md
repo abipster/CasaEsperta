@@ -24,7 +24,7 @@ Start at Traefik's guide [here](traefik.md).
 | 13 | [InfluxDB](https://www.influxdata.com/products/influxdb-overview/) | N/A | Time series database  | No
 | 14 | [Chronograf](https://www.influxdata.com/time-series-platform/chronograf/) | https://chrono.example.pt | Interface for InfluxDB  | Recommended with InfluxDB
 | 15 | [Grafana](#grafana) | https://grafana.example.pt | Time series data visualization  | Recommended with InfluxDB
-| 16 | [Organizr](Organizr.md) | https://example.pt | Server Frontpage | Recommended
+| 16 | [Organizr](organizr.md) | https://example.pt | Server Frontpage | Recommended
 | 17 | [Guacamole](#guacamole) | https://guac.example.pt | HTML 5 clientless remote desktop gateway | No
 | 18 | [Filerun](#filerun) | https://filerun.example.pt | Self-hosted file sharing and explorer | No
 | 19 | [qBittorrent](#download-containers) | https://qbit.example.pt | Torrent downloader | Yes with Radarr or Sonarr
@@ -46,6 +46,8 @@ If you're using Cloudflare, it's recommended for you to pause its features and t
 Replace `~/docker/compose.yml` with the content of [full_compose.yml](../main_server/docker/full_compose.yml).
 
 I recommend to comment all the containers that weren't already installed (starts at ouroboros on the file) and uncommenting one or a few at the time, to separate new deploys from one another. For every container installed, you should check the above table or the below sections to see if it has any special instructions or configuration keys that you need to set.
+
+Follow the table above starting at item number 6 (Ouroboros).
 
 ### [Ouroboros](https://github.com/pyouroboros/ouroboros)
 Not much to say about this container apart from the `IGNORE` environment configuration. This represents the names of the containers you want to exclude from automatic updates. May it be because they are self-managed like Home Assistant Supervised instalation or because they will break or delete some configurations when they are recreated.

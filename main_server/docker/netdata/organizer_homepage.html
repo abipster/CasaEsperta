@@ -1,0 +1,64 @@
+<div style="text-align: center; width:100%;">
+    <div style="display: inline-block; width:100%; max-width: 1200px;">
+        <style>
+            .home_wrapper {
+                display: grid;
+                grid-gap: 10px;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+                max-width: 1200px;
+                overflow: hidden;
+                height: auto;
+                width: 100%;
+                position: relative;
+            }
+
+            .pi1 {
+                grid-column: 1;
+                grid-row: 1;
+                overflow: hidden;
+                height: 243px;
+                max-width: 600px;
+            }
+
+            .pi2 {
+                grid-column: 2;
+                grid-row: 1;
+                overflow: hidden;
+                height: 243px;
+                max-width: 600px;
+            }
+
+
+            @media (max-width:830px) {
+                .home_wrapper {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto auto;
+                }
+
+                .pi1 {
+                    min-height: 220px;
+                    grid-column: 1;
+                    grid-row: 1;
+                }
+
+                .pi2 {
+                    min-height: 220px;
+                    grid-column: 1;
+                    grid-row: 2;
+                }
+            }
+        </style>
+        <div class="home_wrapper">
+            <div class="pi1">
+                <embed style="height:calc(100%);width:calc(100%)" src='https://pi-data.example.pt/overview.html' />
+            </div>
+            <div class="pi2">
+                <embed style="height:calc(100%);width:calc(100%)" src='https://pi2-data.example.pt/overview.html' />
+            </div>
+        </div>
+        <div style="overflow:hidden;height:1650px;width:100%;max-width:1200px;position: relative;margin-top: 10px">
+            <embed style="height:calc(100%);width:calc(100%)" src='https://netdata.example.pt/overview.html' />
+        </div>
+    </div>
+</div>

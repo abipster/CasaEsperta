@@ -26,3 +26,7 @@ There's an example file with only my changed configurations [here](../main_serve
 Although this is not a Docker container, we can instruct Traefik to reverse-proxy it.
 
 Copy the content of [app-shinobi.toml](../main_server/docker/traefik/app-shinobi) to `~/docker/traefik/rules/app-shinobi.toml` and make sure to replace example.pt with your domain, SERVER_IP with your lan IP and SHINOBI_PORT with the running port of Shinobi. After saving the file, you only need to navigate to https://shinobi.example.pt/super.
+
+## How it works
+
+TODO #2

@@ -1,0 +1,14 @@
+# General
+alias aptupd='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+
+# Pi-hole
+alias phlog='sudo systemctl status pihole-FTL.service'
+alias phrst='sudo systemctl restart pihole-FTL.service'
+alias phstop='sudo systemctl stop pihole-FTL.service'
+alias phstart='sudo systemctl start pihole-FTL.service'
+
+# Zigbee2Mqtt
+alias zblog='sudo journalctl -u zigbee2mqtt.service -f'
+alias zbrst='sudo systemctl restart zigbee2mqtt'
+alias zbstop='sudo systemctl stop zigbee2mqtt'
+alias zbstart='sudo systemctl start zigbee2mqtt'

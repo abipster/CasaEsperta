@@ -1,0 +1,15 @@
+[http.routers]
+  [http.routers.pi-data-rtr]
+      entryPoints = ["https"]
+      rule = "HostHeader(`pi-data.example.pt`)"
+      service = "pi-data-svc"
+      middlewares = ["chain-oauth"]
+      [http.routers.pi-data-rtr.tls]
+        certresolver = "dns-cloudflare"
+
+[http.services]
+  [http.services.pi-data-svc]
+    [http.services.pi-data-svc.loadBalancer]
+      passHostHeader = true
+      [[http.services.pi-data-svc.loadBalancer.servers]]
+        url = "http://PI_IP:19999" 

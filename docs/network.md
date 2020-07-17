@@ -8,3 +8,7 @@
 
 ## Topology
 [![](../images/network_topology.png)](../images/network_topology.png)
+
+## VLANs
+
+TODO #1
