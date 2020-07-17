@@ -1,0 +1,17 @@
+# General
+alias aptupd='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+
+# Docker
+alias docdf='docker system df'
+alias dexec='docker exec -ti'
+alias dstopall='sudo docker stop $(sudo docker ps -aq)'
+alias drmall='sudo docker rm $(docker ps -a -q)'
+
+# Docker Compose
+alias dcrun='cd /home/USER/docker ; docker-compose -f /home/USER/docker/compose.yml '
+alias dclogs='dcrun logs -tf --tail="50" '
+alias dcup='dcrun up -d'
+alias dcdown='dcrun down'
+alias dcrec='dcrun up -d --force-recreate'
+alias dcstop='dcrun stop'
+alias dcrestart='dcrun restart '

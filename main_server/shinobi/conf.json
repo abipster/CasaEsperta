@@ -1,0 +1,18 @@
+{
+    "port": 8088,
+    "addStorage": [
+        {
+            "name": "second",
+            "path": "/mnt/External/CCTV"
+        }
+    ],
+    "db": {
+        "host": "192.168.50.250",
+        "user": "majesticflame",
+        "password": "password",
+        "database": "ccio",
+        "port": 3306
+    },
+    "smtpServer": true,
+    "smtpServerPort": 1025
+}

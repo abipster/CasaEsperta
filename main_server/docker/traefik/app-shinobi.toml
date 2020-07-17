@@ -1,0 +1,15 @@
+[http.routers]
+  [http.routers.shinobi-rtr]
+      entryPoints = ["https"]
+      rule = "HostHeader(`shinobi.example.pt`)"
+      service = "shinobi-svc"
+      middlewares = ["chain-oauth"]
+      [http.routers.shinobi-rtr.tls]
+        certresolver = "dns-cloudflare"
+
+[http.services]
+  [http.services.shinobi-svc]
+    [http.services.shinobi-svc.loadBalancer]
+      passHostHeader = true
+      [[http.services.shinobi-svc.loadBalancer.servers]]
+        url = "http://SERVER_IP:SHINOBI_PORT"

@@ -1,0 +1,37 @@
+##### User private folder #####
+# add file /etc/samba/USERNAME.conf with this content:
+# [Home]
+#   browseable = yes
+[Home]
+  path = /home/USERNAME
+  browseable = no
+  read only = no
+  create mask = 0700
+  directory mask = 0700
+  valid users = USERNAME
+  include = /etc/samba/%U.conf
+
+##### Group folder #####
+[Downloads]
+  path = /path/to/Downloads
+  public = no
+  write list = +GROUP
+  force group = GROUP
+  guest ok = False
+  browseable = True
+  writable = True
+  create mode = 0664
+  force create mode = 0664
+  directory mode = 0775
+  force directory mode = 0775
+
+##### Hidden public folder #####
+[folder_name]
+  path = /path/to/folder
+  public = yes
+  browseable = no
+  read only = no
+  guest only = yes
+  create mask = 0664
+  directory mask = 0775
+  force user = USER
