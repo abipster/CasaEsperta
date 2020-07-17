@@ -16,6 +16,9 @@
 * [Containers](docker_containers.md)
 * [Shinobi](shinobi.md)
 
+TODO #3
+
+
 ## Guide
 This guide assumes there's a clean Ubuntu Server 20.04 install, but it might also work with other Ubuntu based versions, clean or not. It also assumes that there's a Windows 10 client machine to SSH from and to access samba shares.
 
