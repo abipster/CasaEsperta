@@ -1,0 +1,13 @@
+# Located at /opt/zigbee2mqtt/data
+#
+homeassistant: false
+permit_join: false
+mqtt:
+  base_topic: zigbee2mqtt
+  server: 'mqtt://SERVER_IP'
+  user: MQTT_USERNAME
+  password: MQTT_PASSWORD
+serial:
+  port: /dev/ttyACM0
+  disable_led: true
+advanced: GENERATE

@@ -198,6 +198,8 @@ cd /opt/zigbee2mqtt
 npm ci
 ```
 After that, configure it by following [this section](https://www.zigbee2mqtt.io/getting_started/running_zigbee2mqtt.html#3-configuring).
+There's an example configuration file [here](../r_pis/zigbee2mqtt/configuration.yaml).
+
 
 Start it:
 ```
@@ -207,7 +209,7 @@ If everything seems right, stop it and setup a autostart service:
 ```
 sudo nano /etc/systemd/system/zigbee2mqtt.service
 ```
-Edit the content of [zigbee2mqtt.service](../r_pis/zigbee2mqtt.service) to replace USERNAME with your username.
+Edit the content of [zigbee2mqtt.service](../r_pis/zigbee2mqtt/zigbee2mqtt.service) to replace USERNAME with your username.
 
 Then start it and check everything is running without errors:
 ```
