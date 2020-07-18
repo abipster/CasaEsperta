@@ -1,0 +1,15 @@
+[http.routers]
+  [http.routers.tadmin-rtr]
+      entryPoints = ["https"]
+      rule = "HostHeader(`tadmin.example.pt`)"
+      service = "tadmin-svc"
+      middlewares = ["chain-oauth"]
+      [http.routers.tadmin-rtr.tls]
+        certresolver = "dns-cloudflare"
+
+[http.services]
+  [http.services.tadmin-svc]
+    [http.services.tadmin-svc.loadBalancer]
+      passHostHeader = true
+      [[http.services.tadmin-svc.loadBalancer.servers]]
+        url = "http://SERVER_IP:9541" 

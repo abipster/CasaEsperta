@@ -36,6 +36,14 @@ This time, we don't want Google authentication in front of Home Assistant nor an
 
 To reverse-proxy it, edit the file [app-hass.toml](../main_server/docker/traefik/app-hass.toml) to replace example.pt with your domain and SERVER_IP with your lan IP. Then copy the file to `~/docker/traefik/rules/app-hass.toml` and navigate to https://hass.example.pt.
 
+
+### Add-ons
+If you want some add-ons to open correctly inside Home Assistant, you have to reverse proxy them as well. Otherwise they'll be served as http and browsers will block them from opening in a https site.
+
+There's an example for TasmoAdmin in [app-tadmin.toml](../main_server/docker/traefik/app-tadmin.toml). Edit it as usual and put it in `~/docker/traefik/rules/app-tadmin.toml` and it will be available at https://tadmin.example.pt.
+
+
+
 ## Share folder
 To facilitate the configuration process of Home Assistant, we'll setup a share to the folder where the config files are stored. 
 
