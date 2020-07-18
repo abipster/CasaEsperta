@@ -23,8 +23,8 @@ Setup the file by changing the configurations you want. In my particular case, I
 There's an example file with only my changed configurations [here](../main_server/docker/shinobi/conf.json).
 
 ```
-sudo pm2 startup && sudo pm2 save
-sudo pm2 restart all
+pm2 start camera.js && pm2 start cron.js
+pm2 startup && pm2 save
 ```
 
 ## Reverse Proxy
