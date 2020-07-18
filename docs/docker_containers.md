@@ -98,6 +98,8 @@ Make sure that these keys have valid values on your `~/docker/.env` file:
 
 The default user/pass is superuser/superuser.
 
+TODO #4
+
 ### Download Containers
 This section is related with the media download services: qBittorrent, Jackett, Sonarr and Radarr.
 

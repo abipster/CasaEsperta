@@ -1,0 +1,15 @@
+[http.routers]
+  [http.routers.hass-rtr]
+      entryPoints = ["https"]
+      rule = "HostHeader(`hass.example.pt`)"
+      service = "hass-svc"
+      middlewares = ["chain-no-auth"]
+      [http.routers.hass-rtr.tls]
+        certresolver = "dns-cloudflare"
+
+[http.services]
+  [http.services.hass-svc]
+    [http.services.hass-svc.loadBalancer]
+      passHostHeader = true
+      [[http.services.hass-svc.loadBalancer.servers]]
+        url = "http://SERVER_IP:8123" 

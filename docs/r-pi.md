@@ -169,7 +169,7 @@ phstart
 ```
 
 ### Reverse-Proxy
-To reverse-proxy it, edit the file [app-pihole.toml](../main_server/docker/traefik/app-pihole.toml) to reflect the Raspberry Pi's IP and replace example.pt with your domain. then copy the file to `~/docker/traefik/rules/app-pihole.toml` and navigate to https://pihole.example.pt.
+To reverse-proxy it, edit the file [app-pihole.toml](../main_server/docker/traefik/app-pihole.toml) to reflect the Raspberry Pi's IP and replace example.pt with your domain. Then copy the file to `~/docker/traefik/rules/app-pihole.toml` and navigate to https://pihole.example.pt.
 
 ## [Zigbee2Mqtt](https://www.zigbee2mqtt.io/)
 To learn how to flash Zigbee coordinators and routers, go read the linked documentation.

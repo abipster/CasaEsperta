@@ -24,7 +24,7 @@ Traefik handles automatically the reverse proxy and SSL certificates side of thi
 
 The "external" authentication is handled by Google authentication, where the Google accounts you permitted will be able to login with their Google accounts and have access to your services. Some of the services have another authentication layer in front of them, but only valid Google accounts will be able to get there.
 
-There's a main frontpage, exposed at https://example.pt by [Organizr](organizr.md). Its [main page](../images/organizr.png) have my server and Raspberry Pis system dashboard so I can have an overview of the state of those machines. It has some admin services on the side bar, like Dozzle, Filerun and Portainer and [Heidall](../images/heimdall.png) as well, as a page to explose the remainder of my services.
+There's a main frontpage, exposed at https://example.pt by [Organizr](organizr.md). Its [main page](../images/organizr.png) have my server and Raspberry Pis system dashboard so I can have an overview of the state of those machines. It has some admin services on the side bar, like Dozzle, Filerun and Portainer and [Heimdall](../images/heimdall.png) as well, as a page to explose the remainder of my services.
 
 I use InfluxDb and grafana to store sensor data and visualize it.
 

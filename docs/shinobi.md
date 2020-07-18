@@ -22,6 +22,11 @@ Setup the file by changing the configurations you want. In my particular case, I
 
 There's an example file with only my changed configurations [here](../main_server/docker/shinobi/conf.json).
 
+```
+sudo pm2 startup && sudo pm2 save
+sudo pm2 restart all
+```
+
 ## Reverse Proxy
 Although this is not a Docker container, we can instruct Traefik to reverse-proxy it.
 

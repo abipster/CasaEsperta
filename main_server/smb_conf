@@ -35,3 +35,16 @@
   create mask = 0664
   directory mask = 0775
   force user = USER
+
+##### Home Assistant folder #####
+
+[Hass]
+  path = /usr/share/hassio/homeassistant
+  browseable = no
+  write list = +GROUP
+  force group = GROUP
+  read only = no
+  create mask = 0774
+  directory mask = 0774
+  valid users = USER
+  include = /etc/samba/%U.conf
