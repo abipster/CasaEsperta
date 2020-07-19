@@ -198,7 +198,7 @@ services:
       LOG_LEVEL: debug
       SELF_UPDATE: "true"
       CLEANUP: "true"
-      IGNORE: netdata # Add all containers you dont want to update (like home assistant ones if running supervised)
+      IGNORE: netdata homeassistant hassio_multicast hassio_cli hassio_audio hassio_dns hassio_supervisor addon_806b11b5_zigbee2mqttassistant addon_a0d7b954_sonweb
 
 # Dozzle - Real-time Docker Log Viewer
   dozzle:

@@ -6,3 +6,4 @@ Repository to keep tabs on everything related with my `CasaEsperta`'s self-hoste
 * [Main Server](docs/server.md)
 * [Raspberry Pi](docs/r-pi.md)
 * [Home Assistant](docs/home-assistant.md)
+* [Tasmota](docs/tasmota.md)
