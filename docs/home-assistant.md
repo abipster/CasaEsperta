@@ -1,10 +1,15 @@
 # CasaEsperta - Home Assistant
 
+## [Configuration](home_assistant/configuration.md)
+
+## [Automations](home_assistant/automations.md)
+
+
+##  Install
 I used the [Supervised Installation](https://community.home-assistant.io/t/installing-home-assistant-supervised-on-ubuntu-18-04-4/200020). As of now, this isn't an Official install method so we need to use the linked guide to install it this way.
 
 This installs a series of containers related with Home Assistant but somewhat separated from your other containers. You'll be able to use the full former hass.io features like add-ons on your normal Ubuntu Server.
 
-##  Install
 ```
 aptupd
 sudo -i
@@ -38,7 +43,7 @@ To reverse-proxy it, edit the file [app-hass.toml](../main_server/docker/traefik
 
 
 ### Add-ons
-If you want some add-ons to open correctly inside Home Assistant, you have to reverse proxy them as well. Otherwise they'll be served as http and browsers will block them from opening in a https site.
+If you want non-ingress add-ons to open correctly inside Home Assistant, you have to reverse proxy them as well. Otherwise they'll be served as http and browsers will block them from opening in a https site.
 
 There's an example for TasmoAdmin in [app-tadmin.toml](../main_server/docker/traefik/app-tadmin.toml). Edit it as usual and put it in `~/docker/traefik/rules/app-tadmin.toml` and it will be available at https://tadmin.example.pt.
 
@@ -63,5 +68,3 @@ sudo nano /etc/samba/smb.conf
 sudo nano /etc/samba/USER.conf
 sudo systemctl restart smbd
 ```
-
-## [Configuration](home_assistant/configuration.md)

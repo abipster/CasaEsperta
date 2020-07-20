@@ -1,5 +1,7 @@
 # CasaEsperta - Home Assistant - Integrations
 
+* [Node-Red](node-red.md)
+
 * [Zigbee2Mqtt Assistant](https://github.com/yllibed/Zigbee2MqttAssistant) - GUI for Zigbee2Mqtt
 Add the following repository url: `https://github.com/yllibed/hassio`
 
