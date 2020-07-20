@@ -27,6 +27,16 @@ pm2 start camera.js && pm2 start cron.js
 pm2 startup && pm2 save
 ```
 
+If this doesn't work, set up a cron job to run 5 minutes after boot:
+```
+sudo su
+crontab -e
+```
+Add this line:
+```
+@reboot /bin/sleep 300 && pm2 restart all
+```
+
 ## Reverse Proxy
 Although this is not a Docker container, we can instruct Traefik to reverse-proxy it.
 

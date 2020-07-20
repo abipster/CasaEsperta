@@ -64,3 +64,4 @@ sudo nano /etc/samba/USER.conf
 sudo systemctl restart smbd
 ```
 
+## [Configuration](home_assistant/configuration.md)
