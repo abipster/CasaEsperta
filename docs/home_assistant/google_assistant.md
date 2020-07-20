@@ -6,3 +6,5 @@ I followed the linked guide, although there's some changes in the UI of Google s
 I choose which entities are exposed individually, insead of being by domain.
 
 * vacuum.xauxau - Main floor robot vacuum
+* light.sala_sofa - Lights above the couch
+* climate.temperatura_da_suite - Suite's temperature

@@ -31,3 +31,37 @@ CREATE DATABASE IF NOT EXISTS homeassistant;
 GRANT ALL PRIVILEGES ON `homeassistant%`.* TO 'USER';
 FLUSH PRIVILEGES;
 ```
+
+## Shelly2Led MQTT
+
+To control the bulb with a simple on-off switch functionality, use:
+```
+shellies/shelly2led-<deviceid>/color/0/command
+shellies/shelly2led-<deviceid>/color/1/command
+```
+accepts on and off payloads.
+
+Device report its current on-off state: 
+```
+shellies/shelly2led-<deviceid>/color/0
+shellies/shelly2led-<deviceid>/color/1 
+```
+
+For controlling other paramters of the LED channels publish to :
+```
+shellies/shelly2led-<deviceid>/color/0/set
+shellies/shelly2led-<deviceid>/color/1/set
+```
+Device expects a JSON payload on this topic, with the following sample 
+```json
+contents:
+{
+    brightness:<value 0-100>,
+    turn:"on"|"off",
+}
+```
+An identical JSON payload will be published by Shelly2LED on :
+```
+shellies/shelly2led-<deviceid>/color/0/status
+shellies/shelly2led-<deviceid>/color/1/status
+```

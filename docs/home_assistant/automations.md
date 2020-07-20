@@ -1,5 +1,10 @@
 # CasaEsperta - Home Assistant - Automations
 
-* system_set_theme
+
+## System
+* Set theme on start
     
-    Changes the theme to Slate when Home Assistant starts
+    Changes the theme when Home Assistant starts
+* Set fake heat
+    
+    Sends a MQTT to a fake topic to set the mode of fake climate entities to 'heat', so Google Assistant can read just the temperature of the linked sensor.
