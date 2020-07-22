@@ -10,6 +10,17 @@ This is the hardware that I flashed with Tasmota:
 * [Magic Home Mini RGB RGBW Wifi Controller](https://pt.aliexpress.com/item/32791924935.html) - [How](https://tasmota.github.io/docs/devices/MagicHome-LED-strip-controller/)
 
 
+## Flashing
+
+We use [PlatformIO](https://platformio.org/) to flash the first version of Tasmota, built from source following [this guide](https://tasmota.github.io/docs/PlatformIO/).
+
+Need to change some things to build and flash Tasmota with right settings:
+
+Edit `platformio.ini` from the Tasmota source folder to set the right `upload_port`.
+
+Edit `my_user_config.h` to configure your WiFi and timezone.
+
+
 ### Commands
 
 * Set timezone and DSTs for Portugal
