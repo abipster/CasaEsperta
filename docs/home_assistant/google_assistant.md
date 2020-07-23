@@ -6,35 +6,13 @@ I followed the linked guide, although there's some changes in the UI of Google s
 I choose which entities are exposed individually, insead of being by domain.
 
 * vacuum.xauxau - Main floor robot vacuum
-* light.sala_sofa - Lights above the couch
 * climate.temperatura_da_sala - Sala's temperature
 * climate.temperatura_da_suite - Suite's temperature
-* light.suite_direita - Suite's right light
-* light.suite_esquerda - Suite's left light
-* light.suite_frente - Suite's front light
-* light.cozinha_led - Kitchen's led strip
-* light.cozinha_mesa - Kitchen table's light
-* light.cozinha_patio - Patio's light 
-* light.cozinha_teto - Kitchen ceiling's light
 * climate.temperatura_da_cozinha - Cozinha's temperature
 * climate.temperatura_da_cave - Cave's temperature
 * fan.ventoinha_da_cave - Cave's ventilation fan
-* light.cave_detolf_led - Cave's vitrines's led strip
-* light.cave_teto - Cave's ceiling light
 * climate.temperatura_do_terraco - Terraço's temperature
-* light.casa_banho_espelho - Bathrooms's mirror light
-* light.casa_banho_teto - Bathrooms's ceiling light
-* light.quarto_cama_direita - Right side of bedroom's bed
-* light.quarto_teto - Bedroom's ceiling light
-* light.corredor_inicio - Corridor beginning's lights
-* light.corredor_escadas - Going up stairs's light
-* light.terraco_direita - Terrace's right light
-* light.terraco_esquerda - Terrace's left light
-* light.terraco_frente - Terrace's front light
-* light.quarto_cima_direita - Upstairs bedroom's right light
-* light.quarto_cima_esquerda - Upstairs bedroom's left light
-* light.casa_banho_suite_espelho - Suite bathrooms's mirror light
-* light.casa_banho_suite_teto - Suite bathrooms's ceiling light
+* all light entities
 
 ## Xiaomi temperature sensors
 

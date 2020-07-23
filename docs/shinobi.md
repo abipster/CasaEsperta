@@ -42,6 +42,48 @@ Although this is not a Docker container, we can instruct Traefik to reverse-prox
 
 Copy the content of [app-shinobi.toml](../main_server/docker/traefik/app-shinobi) to `~/docker/traefik/rules/app-shinobi.toml` and make sure to replace example.pt with your domain, SERVER_IP with your lan IP and SHINOBI_PORT with the running port of Shinobi. After saving the file, you only need to navigate to https://shinobi.example.pt/super.
 
+## [MQTT](https://hub.shinobi.video/articles/view/xEMps3O4y4VEaYk)
+You can enable MQTT triggers to alert other systems through MQTT if a motion is detected.
+
+Edit `/home/Shinobi/conf.json` and add the following section:
+
+```json
+"mqtt": {
+    "verbose": false,
+    "url": "mqtt://localhost:1883",
+    "mqtt_options": {
+      "username": "USERNAME",
+      "password": "PASSWORD" 
+    },
+    "topic": "shinobi",
+    "filterplugs": ["body_terrace"],
+    "toMqttMessage": {
+      "key": "key",
+      "name": "name",
+      "details": "details",
+      "currentTimestamp": "currentTimestamp",
+      "plug": "plug",
+      "name": "mon.name"
+    },
+    "triggerTopics": {
+      "motionsensor/body_terrace/out": {
+        "monitorid": "MONITOR_ID",
+        "groupkey": "GROUPKEY"
+      }
+    }
+}
+```
+
+Install the MQTT dependency:
+```
+sudo su
+curl -o ./libs/customAutoLoad/mqtt.js https://gitlab.com/geerd/shinobi-mqtt/raw/master/mqtt.js
+npm install mqtt
+pm2 restart all
+```
+
+
+
 ## How it works
 
 TODO #2
